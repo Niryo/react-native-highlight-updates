@@ -8,6 +8,7 @@ const OriginalTouchableOpacity = ReactNative.TouchableOpacity;
 function getMockContainer(OriginalComponent) {
   return class extends React.Component {
     static displayName = 'View';
+    setNativeProps() {}  
     render() {
       return <OriginalComponent {...this.props}><HighlightComponent />{this.props.children}</OriginalComponent>;
     }
